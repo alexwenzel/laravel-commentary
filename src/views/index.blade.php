@@ -19,22 +19,22 @@
 <td>{{ $comment->text }}</td>
 <td>{{ $comment->created_at }}</td>
 <td>
-    {{ link_to_action('Alexwenzel\LaravelCommentary\CommentsController@getApprove',
+    {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getApprove',
     Lang::get('laravel-commentary::messages.action.approve'),
     array($comment->id)) }}
 </td>
 <td>
-    {{ link_to_action('Alexwenzel\LaravelCommentary\CommentsController@getUnapprove',
+    {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getUnapprove',
     Lang::get('laravel-commentary::messages.action.unapprove'),
     array($comment->id)) }}
 </td>
 <td>
-    {{ link_to_action('Alexwenzel\LaravelCommentary\CommentsController@getEdit',
+    {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getEdit',
     Lang::get('laravel-commentary::messages.action.edit'),
     array($comment->id)) }}
 </td>
 <td>
-    {{ link_to_action('Alexwenzel\LaravelCommentary\CommentsController@getTrash',
+    {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getTrash',
     Lang::get('laravel-commentary::messages.action.trash'),
     array($comment->id)) }}
 </td>

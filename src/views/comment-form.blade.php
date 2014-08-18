@@ -1,4 +1,4 @@
-{{ Form::open(array('action'=>array('Alexwenzel\LaravelCommentary\CommentsController@postComment'), 'method'=>'post')) }}
+{{ Form::open(array('action'=>array('Alexwenzel\LaravelCommentary\FrontendController@postComment'), 'method'=>'post')) }}
 
 {{ Form::hidden('entity', $entity) }}
 

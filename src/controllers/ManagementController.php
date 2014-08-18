@@ -1,15 +1,15 @@
 <?php namespace Alexwenzel\LaravelCommentary;
 
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 
 use Alexwenzel\LaravelCommentary\CommentaryActionHandler;
 
-class CommentsController extends Controller {
+class ManagementController extends Controller {
 
     /**
      * Actionhandler Dependency
@@ -68,7 +68,7 @@ class CommentsController extends Controller {
 
         $this->actionhandler->comment_edit($id, $data);
 
-        return Redirect::action('Alexwenzel\LaravelCommentary\CommentsController@getIndex');
+        return Redirect::action('Alexwenzel\LaravelCommentary\ManagementController@getIndex');
     }
 
     /**
@@ -80,7 +80,7 @@ class CommentsController extends Controller {
     public function getTrash($id)
     {
         $this->actionhandler->comment_trash($id);
-        return Redirect::action('Alexwenzel\LaravelCommentary\CommentsController@getIndex');
+        return Redirect::action('Alexwenzel\LaravelCommentary\ManagementController@getIndex');
     }
 
     /**
@@ -92,7 +92,7 @@ class CommentsController extends Controller {
     public function getApprove($id)
     {
         $this->actionhandler->comment_approve($id);
-        return Redirect::action('Alexwenzel\LaravelCommentary\CommentsController@getIndex');
+        return Redirect::action('Alexwenzel\LaravelCommentary\ManagementController@getIndex');
     }
 
     /**
@@ -104,28 +104,7 @@ class CommentsController extends Controller {
     public function getUnapprove($id)
     {
         $this->actionhandler->comment_unapprove($id);
-        return Redirect::action('Alexwenzel\LaravelCommentary\CommentsController@getIndex');
-    }
-
-    /**
-     * Handler for the submitted comment form
-     * @return Response
-     */
-    public function postComment()
-    {
-        $validator = Validator::make($data = Input::all(), $this->actionhandler->comment_rules());
-
-        if ($validator->fails())
-        {
-            return Redirect::back()
-                ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_fails'))
-                ->withErrors($validator)->withInput();
-        }
-
-        $model = $this->actionhandler->comment_post($data);
-
-        return Redirect::back()
-            ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_success'));
+        return Redirect::action('Alexwenzel\LaravelCommentary\ManagementController@getIndex');
     }
 
 }

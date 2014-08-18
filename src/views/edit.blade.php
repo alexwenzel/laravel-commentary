@@ -1,4 +1,4 @@
-{{ Form::model($comment, array('action'=>array('Alexwenzel\LaravelCommentary\CommentsController@postUpdate', $comment->id), 'method'=>'post')) }}
+{{ Form::model($comment, array('action'=>array('Alexwenzel\LaravelCommentary\ManagementController@postUpdate', $comment->id), 'method'=>'post')) }}
 
 @foreach ($errors->all('<p>:message</p>') as $error)
 {{ $error }}
