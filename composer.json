@@ -1,0 +1,25 @@
+{
+    "name": "alexwenzel/laravel-commentary",
+    "description": "",
+    "authors": [
+        {
+            "name": "alexwenzel",
+            "email": "alexander.wenzel.berlin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/controllers",
+            "src/models"
+        ],
+        "psr-0": {
+            "Alexwenzel\\LaravelCommentary\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
