@@ -37,13 +37,15 @@ class FrontendController extends Controller {
         {
             return Redirect::back()
                 ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_fails'))
+                ->with('laravelcommentary.messageclass', 'error')
                 ->withErrors($validator)->withInput();
         }
 
         $model = $this->actionhandler->comment_post($data);
 
         return Redirect::back()
-            ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_success'));
+            ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_success'))
+            ->with('laravelcommentary.messageclass', 'success');
     }
 
 }

@@ -1,0 +1,100 @@
+/**
+ * FORM
+ */
+form.laravelcommentary {
+    width: 100%;
+}
+
+form.laravelcommentary .msg {
+    width: 100%;
+    margin: 2px 0;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+form.laravelcommentary .msg.error {
+    border: 1px solid red;
+}
+
+form.laravelcommentary .msg.success {
+    border: 1px solid green;
+}
+
+form.laravelcommentary table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+form.laravelcommentary table td {
+    padding: 0px;
+}
+
+form.laravelcommentary table td:first-child {
+    vertical-align: top;
+}
+
+form.laravelcommentary table input,
+form.laravelcommentary table textarea {
+    width: 100%;
+}
+
+/**
+ * LIST
+ */
+div.laravelcommentary-list table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+div.laravelcommentary-list table td {
+    padding: 0px;
+}
+
+div.laravelcommentary-list table td:first-child {
+    vertical-align: top;
+}
+
+/**
+ * MANAGEMENT
+ */
+div.laravelcommentary-management table {
+    width: 100%;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+div.laravelcommentary-management tr.approved {
+    background-color: aliceblue;
+}
+
+div.laravelcommentary-management tr.unapproved {
+    background-color: antiquewhite;
+}
+
+div.laravelcommentary-management .msg {
+    width: 100%;
+    margin: 2px 0;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+div.laravelcommentary-management .msg.error {
+    border: 1px solid red;
+}
+
+div.laravelcommentary-management table td {
+    padding: 0px;
+}
+
+div.laravelcommentary-management table td:first-child {
+    vertical-align: top;
+}
+
+div.laravelcommentary-management table input,
+div.laravelcommentary-management table button,
+div.laravelcommentary-management table textarea {
+    width: 100%;
+}

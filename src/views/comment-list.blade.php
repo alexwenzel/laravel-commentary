@@ -1,3 +1,4 @@
+<div class="laravelcommentary-list">
 <table><tbody>
 @foreach ($comments as $comment)
 <tr>
@@ -6,3 +7,4 @@
 </tr>
 @endforeach
 </tbody></table>
+</div>

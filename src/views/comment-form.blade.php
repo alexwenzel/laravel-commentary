@@ -1,15 +1,21 @@
-{{ Form::open(array('action'=>array('Alexwenzel\LaravelCommentary\FrontendController@postComment'), 'method'=>'post')) }}
+{{ Form::open(array('action'=>array('Alexwenzel\LaravelCommentary\FrontendController@postComment'),'method'=>'post','class'=>'laravelcommentary')) }}
 
+{{-- entity as hidden field --}}
 {{ Form::hidden('entity', $entity) }}
 
+{{-- general form messages --}}
 @if (Session::has('laravelcommentary.message'))
-<p>{{ Session::get('laravelcommentary.message') }}</p>
+<div class="msg {{ Session::get('laravelcommentary.messageclass') }}">
+    {{ Session::get('laravelcommentary.message') }}
+</div>
 @endif
 
-@foreach ($errors->all('<p>:message</p>') as $error)
+{{-- validation errors --}}
+@foreach ($errors->all('<div class="msg error">:message</div>') as $error)
 {{ $error }}
 @endforeach
 
+{{-- form input elements --}}
 <table>
 <tr>
     <td>{{ Form::label('name', 'Name') }}</td>

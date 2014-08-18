@@ -57,6 +57,8 @@ Route::controller('commentsmanagement', 'Alexwenzel\LaravelCommentary\Management
 Route::controller('commentsfrontend', 'Alexwenzel\LaravelCommentary\FrontendController');
 ````
 
+If you need to customize the management section, override the view within your project.
+
 ### Comment form
 
 To display the comment form, include something like the following line in your view:
@@ -85,3 +87,11 @@ The following conditions are applied to the comment listing. Comments:
 ### Comment controller behaviour
 
 The behaviour can be customized by overriding ``CommentaryActionHandler`` class.
+
+### Assets
+
+This package comes with default styles.
+
+````
+php artisan asset:publish alexwenzel/laravel-commentary
+````

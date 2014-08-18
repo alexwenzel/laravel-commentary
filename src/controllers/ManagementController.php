@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Config;
 
 use Alexwenzel\LaravelCommentary\CommentaryActionHandler;
 
@@ -35,8 +36,10 @@ class ManagementController extends Controller {
      */
     public function getIndex()
     {
-        $comments = $this->actionhandler->index();
-        return View::make('laravel-commentary::index', compact('comments'));
+        return View::make('laravel-commentary::management.index', array(
+            'comments' => $this->actionhandler->index(),
+            'str_limit' => Config::get('laravel-commentary::config.management.str_limit', 50),
+        ));
     }
 
     /**
@@ -48,7 +51,7 @@ class ManagementController extends Controller {
     public function getEdit($id)
     {
         $comment = $this->actionhandler->find($id);
-        return View::make('laravel-commentary::edit', compact('comment'));
+        return View::make('laravel-commentary::management.edit', compact('comment'));
     }
 
     /**
