@@ -1,5 +1,6 @@
 <?php namespace Alexwenzel\LaravelCommentary;
 
+use Illuminate\Support\Facades\Config;
 use Alexwenzel\LaravelCommentary\Comment;
 
 class CommentaryActionHandler {
@@ -23,13 +24,20 @@ class CommentaryActionHandler {
      * Index Method
      * @return Collection
      */
-    public function index()
+    public function index(array $filter)
     {
-        return $this->model
-            ->orderBy('status', 'asc')
-            ->orderBy('updated_at', 'desc')
-            ->orderBy('created_at', 'desc')
-            ->get();
+        $paginate = Config::get('laravel-commentary::config.management.paginate', 50);
+
+        $query = $this->model;
+
+        foreach ($filter as $key => $value) {
+            if ( ! is_null($value) ) {
+                $query = $query->where($key, $filter[$key]);
+            }
+        }
+
+        return $query->orderBy('status', 'asc')->orderBy('updated_at', 'desc')
+            ->orderBy('created_at', 'desc')->paginate($paginate);
     }
 
     /**
@@ -48,11 +56,11 @@ class CommentaryActionHandler {
      */
     public function comment_rules()
     {
-        return array(
-            'name' => 'required|max:200',
+        return Config::get('laravel-commentary::config.validation_rules', array(
+            'name'  => 'required|max:200',
             'email' => 'required|email|max:200',
-            'text' => 'required',
-        );
+            'text'  => 'required',
+        ));
     }
 
     /**

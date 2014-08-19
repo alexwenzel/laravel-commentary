@@ -36,9 +36,12 @@ class ManagementController extends Controller {
      */
     public function getIndex()
     {
+        $filter = array();
+        $filter['status'] = Input::get('status', null);
+
         return View::make('laravel-commentary::management.index', array(
-            'comments' => $this->actionhandler->index(),
-            'str_limit' => Config::get('laravel-commentary::config.management.str_limit', 50),
+            'comments' => $this->actionhandler->index($filter),
+            'filter' => $filter,
         ));
     }
 

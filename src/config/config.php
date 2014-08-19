@@ -8,11 +8,17 @@ return array(
 
     'allowed_tags' => '',
 
+    'validation_rules' => array(
+        'name' => 'required|max:200',
+        'email' => 'required|email|max:200',
+        'text' => 'required',
+    ),
+
     /**
      * Management
      */
 
     'management' => array(
-        'str_limit' => 50,
+        'paginate' => 20,
     ),
 );

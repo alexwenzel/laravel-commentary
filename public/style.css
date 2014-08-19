@@ -59,11 +59,21 @@ div.laravelcommentary-list table td:first-child {
 /**
  * MANAGEMENT
  */
+
+div.laravelcommentary-management ul.pagination li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
 div.laravelcommentary-management table {
     width: 100%;
     border-spacing: 0px;
     border-collapse: collapse;
     text-align: left;
+}
+
+div.laravelcommentary-management tbody.list tr {
+    border-bottom: 1px solid #CCC;
 }
 
 div.laravelcommentary-management tr.approved {
@@ -86,11 +96,15 @@ div.laravelcommentary-management .msg.error {
 }
 
 div.laravelcommentary-management table td {
-    padding: 0px;
+    padding: 0px 2px;
+    vertical-align: top;
 }
 
-div.laravelcommentary-management table td:first-child {
+div.laravelcommentary-management table td.time {
+    padding: 0px 2px;
     vertical-align: top;
+    white-space: nowrap;
+    font-size: 0.8em;
 }
 
 div.laravelcommentary-management table input,
