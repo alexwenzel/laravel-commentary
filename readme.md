@@ -21,6 +21,16 @@ The comment management allows someone to
 
 comments.
 
+## Screenshots
+
+### Form
+
+![form](img/form.png)
+
+### Management
+
+![management](img/management.png)
+
 ## Implementation
 
 ### ServiceProvider
