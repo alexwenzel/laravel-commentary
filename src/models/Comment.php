@@ -42,16 +42,29 @@ class Comment extends \Eloquent {
     protected $dates = ['deleted_at'];
 
     /**
-     * Status text for management view
+     * Getter: Status text for management view
      * @return string
      */
-    public function statusText()
+    public function getStatusTextAttribute()
     {
         if ($this->status === 1) {
             return Lang::get('laravel-commentary::messages.status_approved');
         }
 
         return Lang::get('laravel-commentary::messages.status_unapproved');
+    }
+
+    /**
+     * Getter: Status css class for management view
+     * @return string
+     */
+    public function getStatusClassAttribute()
+    {
+        if ($this->status === 1) {
+            return 'approved';
+        }
+
+        return 'unapproved';
     }
 
     /**

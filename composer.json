@@ -1,6 +1,7 @@
 {
     "name": "alexwenzel/laravel-commentary",
-    "description": "",
+    "description": "A package for Laravel to post a comment on an article and to manage them.",
+    "keywords": ["laravel","comments"],
     "authors": [
         {
             "name": "alexwenzel",
