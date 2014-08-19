@@ -67,7 +67,7 @@ Route::controller('commentsmanagement', 'Alexwenzel\LaravelCommentary\Management
 Route::controller('commentsfrontend', 'Alexwenzel\LaravelCommentary\FrontendController');
 ````
 
-If you need to customize the management section, override the view within your project.
+If you need to customize the management section, [override](http://laravel.com/docs/packages#package-views) the views within your project.
 
 ### Comment form
 
