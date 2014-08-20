@@ -9,9 +9,9 @@ return array(
     'allowed_tags' => '',
 
     'validation_rules' => array(
-        'name' => 'required|max:200',
+        'name'  => 'required|max:200',
         'email' => 'required|email|max:200',
-        'text' => 'required',
+        'text'  => 'required',
     ),
 
     /**
@@ -19,6 +19,8 @@ return array(
      */
 
     'management' => array(
-        'paginate' => 20,
+        'paginate'             => 20,
+        'row_approved_class'   => 'approved',
+        'row_unapproved_class' => 'unapproved',
     ),
 );
