@@ -18,15 +18,15 @@
 {{-- form input elements --}}
 <table>
 <tr>
-    <td>{{ Form::label('name', 'Name') }}</td>
+    <td>{{ Form::label('name', trans('laravel-commentary::texts.form.name')) }}</td>
     <td>{{ Form::text('name') }}</td>
 </tr>
 <tr>
-    <td>{{ Form::label('email', 'Email') }}</td>
+    <td>{{ Form::label('email', trans('laravel-commentary::texts.form.email')) }}</td>
     <td>{{ Form::text('email') }}</td>
 </tr>
 <tr>
-    <td>{{ Form::label('text', 'Text') }}</td>
+    <td>{{ Form::label('text', trans('laravel-commentary::texts.form.comment')) }}</td>
     <td>{{ Form::textarea('text') }}</td>
 </tr>
 <tr>

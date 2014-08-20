@@ -48,10 +48,10 @@ class Comment extends \Eloquent {
     public function getStatusTextAttribute()
     {
         if ($this->status === 1) {
-            return Lang::get('laravel-commentary::messages.status_approved');
+            return Lang::get('laravel-commentary::texts.management.status_approved');
         }
 
-        return Lang::get('laravel-commentary::messages.status_unapproved');
+        return Lang::get('laravel-commentary::texts.management.status_unapproved');
     }
 
     /**

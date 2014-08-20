@@ -10,7 +10,7 @@ This package comes with 3 parts:
 * comment listing
 * comment management
 
-The form allows anyone to post a comment on something. It can be applied to any view. The same goes for ther comment listing. 
+The form allows anyone to post a comment on something. It can be applied to any view. The same goes for ther comment listing.
 
 The comment management allows someone to
 
@@ -105,3 +105,7 @@ This package comes with default styles.
 ````
 php artisan asset:publish alexwenzel/laravel-commentary
 ````
+
+### Localization
+
+Read here: http://laravel.com/docs/localization#overriding-package-language-files

@@ -10,14 +10,14 @@ class FrontendController extends Controller {
 
     /**
      * Actionhandler Dependency
-     * 
+     *
      * @var CommentaryActionHandler
      */
     protected $actionhandler;
 
     /**
      * Inject Dependency
-     * 
+     *
      * @param CommentaryActionHandler $actionhandler
      */
     public function __construct(CommentaryActionHandler $actionhandler)
@@ -36,7 +36,7 @@ class FrontendController extends Controller {
         if ($validator->fails())
         {
             return Redirect::back()
-                ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_fails'))
+                ->with('laravelcommentary.message', Lang::get('laravel-commentary::texts.form.post_fails'))
                 ->with('laravelcommentary.messageclass', 'error')
                 ->withErrors($validator)->withInput();
         }
@@ -44,7 +44,7 @@ class FrontendController extends Controller {
         $model = $this->actionhandler->comment_post($data);
 
         return Redirect::back()
-            ->with('laravelcommentary.message', Lang::get('laravel-commentary::messages.post_success'))
+            ->with('laravelcommentary.message', Lang::get('laravel-commentary::texts.form.post_success'))
             ->with('laravelcommentary.messageclass', 'success');
     }
 

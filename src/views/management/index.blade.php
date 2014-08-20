@@ -6,18 +6,18 @@
 <table>
 <tr>
 <td width="25%">{{ $comments->appends($filter)->links() }}</td>
-<td width="25%"><a href="?">all</a></td>
-<td width="25%"><a href="?status=1">approved</a></td>
-<td width="25%"><a href="?status=0">unapproved</a></td>
+<td width="25%"><a href="?">{{ trans('laravel-commentary::texts.management.status_all') }}</a></td>
+<td width="25%"><a href="?status=1">{{ trans('laravel-commentary::texts.management.status_approved') }}</a></td>
+<td width="25%"><a href="?status=0">{{ trans('laravel-commentary::texts.management.status_unapproved') }}</a></td>
 </tr>
 </table>
 
 <table>
 {{-- header --}}
 <thead>
-    <th>{{ trans('laravel-commentary::messages.author') }}</th>
-    <th>{{ trans('laravel-commentary::messages.entity') }}</th>
-    <th>{{ trans('laravel-commentary::messages.comment') }}</th>
+    <th>{{ trans('laravel-commentary::texts.author') }}</th>
+    <th>{{ trans('laravel-commentary::texts.entity') }}</th>
+    <th>{{ trans('laravel-commentary::texts.comment') }}</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
 </thead>
@@ -34,27 +34,27 @@
 <td>
 @if ( $comment->status === 0 )
     {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getApprove',
-    trans('laravel-commentary::messages.action.approve'),
+    trans('laravel-commentary::texts.management.approve'),
     array($comment->id)) }}
 @else
     {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getUnapprove',
-    trans('laravel-commentary::messages.action.unapprove'),
+    trans('laravel-commentary::texts.management.unapprove'),
     array($comment->id)) }}
 @endif
     <br>
     {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getEdit',
-    trans('laravel-commentary::messages.action.edit'),
+    trans('laravel-commentary::texts.management.edit'),
     array($comment->id)) }}
     <br>
     {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getTrash',
-    trans('laravel-commentary::messages.action.trash'),
+    trans('laravel-commentary::texts.management.trash'),
     array($comment->id)) }}
 </td>
 {{-- dates --}}
 <td class="time">
-    {{ trans('laravel-commentary::messages.created_at') }}:
+    {{ trans('laravel-commentary::texts.management.created_at') }}:
     <br>{{ $comment->created_at }}<br><br>
-    {{ trans('laravel-commentary::messages.updated_at') }}:<br>{{ $comment->updated_at }}
+    {{ trans('laravel-commentary::texts.management.updated_at') }}:<br>{{ $comment->updated_at }}
 </td>
 </tr>
 @endforeach
