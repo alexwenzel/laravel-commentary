@@ -61,10 +61,10 @@ class Comment extends \Eloquent {
     public function getStatusClassAttribute()
     {
         if ($this->status === 1) {
-            return 'approved';
+            return Config::get('laravel-commentary::config.management.row_approved_class', 'approved');
         }
 
-        return 'unapproved';
+        return Config::get('laravel-commentary::config.management.row_unapproved_class', 'unapproved');
     }
 
     /**
