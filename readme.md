@@ -98,6 +98,17 @@ The following conditions are applied to the comment listing. Comments:
 
 The behaviour can be customized by overriding ``CommentaryActionHandler`` class.
 
+### Events
+
+The following events are fired:
+
+````
+laravel-commentary.comment-posted // first parameter is the comment
+laravel-commentary.comment-approved // first parameter is the comment
+laravel-commentary.comment-unapproved // first parameter is the comment
+laravel-commentary.comment-trashed // first parameter is the comment
+````
+
 ### Assets
 
 This package comes with default styles.

@@ -1,6 +1,7 @@
 <?php namespace Alexwenzel\LaravelCommentary;
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Event;
 use Alexwenzel\LaravelCommentary\Comment;
 
 class CommentaryActionHandler {
@@ -70,7 +71,11 @@ class CommentaryActionHandler {
      */
     public function comment_post($data)
     {
-        return $this->model->create($data);
+        $comment = $this->model->create($data);
+
+        Event::fire('laravel-commentary.comment-posted', array($comment));
+
+        return $comment;
     }
 
     /**
@@ -104,6 +109,9 @@ class CommentaryActionHandler {
     public function comment_approve($id)
     {
         $comment = $this->find($id);
+
+        Event::fire('laravel-commentary.comment-approved', array($comment));
+
         return $comment->approve();
     }
 
@@ -115,6 +123,9 @@ class CommentaryActionHandler {
     public function comment_unapprove($id)
     {
         $comment = $this->find($id);
+
+        Event::fire('laravel-commentary.comment-unapproved', array($comment));
+
         return $comment->unapprove();
     }
 
@@ -126,6 +137,9 @@ class CommentaryActionHandler {
     public function comment_trash($id)
     {
         $comment = $this->find($id);
+
+        Event::fire('laravel-commentary.comment-trashed', array($comment));
+
         return $comment->delete();
     }
 
