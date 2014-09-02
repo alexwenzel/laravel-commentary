@@ -47,7 +47,7 @@ class Comment extends \Eloquent {
      */
     public function getStatusTextAttribute()
     {
-        if ($this->status === 1) {
+        if ( (int)$this->status === 1) {
             return Lang::get('laravel-commentary::texts.management.status_approved');
         }
 
@@ -60,7 +60,7 @@ class Comment extends \Eloquent {
      */
     public function getStatusClassAttribute()
     {
-        if ($this->status === 1) {
+        if ( (int)$this->status === 1) {
             return Config::get('laravel-commentary::config.management.row_approved_class', 'approved');
         }
 
