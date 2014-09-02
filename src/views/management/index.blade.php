@@ -32,7 +32,7 @@
 <td>{{ nl2br($comment->text) }}</td>
 {{-- action --}}
 <td>
-@if ( $comment->status === 0 )
+@if ( (int)$comment->status === 0 )
     {{ link_to_action('Alexwenzel\LaravelCommentary\ManagementController@getApprove',
     trans('laravel-commentary::texts.management.approve'),
     array($comment->id)) }}
